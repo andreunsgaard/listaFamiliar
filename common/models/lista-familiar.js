@@ -9,7 +9,7 @@ module.exports = function(Listafamiliar) {
 
 		console.log(ctx.req.accessToken);
 		Usuario.findById(ctx.req.accessToken.userId, function(err, usuario) {
-			if (err) next(err);
+			if (err) next(err); 
 
 			ctx.args.filter = {
 				"where": { // include usuarios for the owner

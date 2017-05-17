@@ -22,8 +22,9 @@ module.exports = function(app) {
               username: 'admin',
               apellidos: 'Plataforma',
               nombre: 'Administrador',
-              email: 'alberto.sierra@murciaeduca.es',
-              password: 'password'
+              email: 'andreunsgaard@live.com',
+              password: 'password',
+              listaFamiliarId:'1'
             }], function(err, users) {
               if (err) throw err;
 
