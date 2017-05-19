@@ -23,6 +23,13 @@ module.exports = function(app) {
               apellidos: 'Plataforma',
               nombre: 'Administrador',
               email: 'alberto.sierra@murciaeduca.es',
+              password: 'password',
+              listaFamiliarId:'1'
+            },{
+              username: 'andreunsgaard',
+              apellidos: 'unsgaard',
+              nombre: 'andre',
+              email: 'aunsgaard@murciaeduca.es',
               password: 'password'
             }], function(err, users) {
               if (err) throw err;
