@@ -14,8 +14,8 @@
   },
   "validations": [],
   "relations": {
-    "usuarios": {
-      "type": "hasMany",
+    "solicitudes": {
+      "type": "hasAndBelongsToMany",
       "model": "Usuario",
       "foreignKey": ""
     },
@@ -56,6 +56,13 @@
       "principalId": "$authenticated",
       "permission": "ALLOW",
       "property": "create"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "__link__solicitudes"
     }
   ],
   "methods": {}

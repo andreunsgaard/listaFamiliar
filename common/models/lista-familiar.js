@@ -24,7 +24,18 @@ module.exports = function(Listafamiliar) {
 
 	//asociar al ususario autenticado la lista recien creada
 
-Listafamiliar.afterRemote("create", function(ctx, modelInstance, next) {
+	Listafamiliar.beforeRemote("prototype.__link__solicitudes", function(ctx, modelInstance, next) {
+		//...
+		var app = require('../../server/server.js')
+		var Usuario = app.models.Usuario;
+
+		ctx.args.fk = ctx.req.accessToken.userId;
+		next();
+	});
+
+	//asociar al ususario autenticado la lista recien creada
+
+	Listafamiliar.afterRemote("create", function(ctx, modelInstance, next) {
 		//...
 		var app = require('../../server/server.js')
 		var Usuario = app.models.Usuario;
@@ -39,4 +50,3 @@ Listafamiliar.afterRemote("create", function(ctx, modelInstance, next) {
 	});
 
 };
-

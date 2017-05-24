@@ -4,7 +4,7 @@ module.exports = function(app) {
     app.dataSources.mysqlDs.automigrate(lbTables, function(er) {
       if (er) throw er;
       console.log('Loopback tables [', lbTables, '] created in ', app.dataSources.mysqlDs.adapter.name);
-      var listaFamiliarTables = ['Usuario', 'ListaFamiliar', 'Producto'];
+      var listaFamiliarTables = ['Usuario', 'ListaFamiliar', 'Producto', 'ListaFamiliarUsuario'];
       app.dataSources.mysqlDs.automigrate(listaFamiliarTables, function(er) {
         if (er) throw er;
         console.log('Loopback tables [', listaFamiliarTables, '] created in ', app.dataSources.mysqlDs.adapter.name);
