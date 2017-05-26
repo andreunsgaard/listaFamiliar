@@ -41,5 +41,34 @@
       "permission": "ALLOW"
     }
   ],
-  "methods": {}
+  "methods": {
+    "prototype.aceptarSolicitud": {
+      "accepts": [
+        {
+          "arg": "ctx",
+          "type": "object",
+          "required": false,
+          "description": "",
+          "http": {
+            "source": "context"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "mensaje",
+          "type": "string",
+          "root": true,
+          "description": "El mensaje de éxito o fracaso de la acción"
+        }
+      ],
+      "description": "Acepta la solicitud previo de otro usuario de pertenecer a la lista",
+      "http": [
+        {
+          "path": "/aceptaSolicitud",
+          "verb": "put"
+        }
+      ]
+    }
+  }
 }
