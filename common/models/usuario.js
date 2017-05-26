@@ -5,7 +5,7 @@ module.exports = function(Usuario) {
 	Usuario.prototype.aceptarSolicitud = function(ctx, cb) {
 		var app = require('../../server/server.js')
 		var Usuario = app.models.Usuario;
-
+		console.info(ctx);
 		var usuarioSolicitante = this;
 		//Buscamos al usuario que está autenticado para conocer a qué lista familiar está asociado
 		Usuario.findById(ctx.req.accessToken.userId, function(err, usuario) {

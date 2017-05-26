@@ -39,6 +39,13 @@
       "principalType": "ROLE",
       "principalId": "admin",
       "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "Listamember",
+      "permission": "ALLOW",
+      "property": "aceptarSolicitud"
     }
   ],
   "methods": {

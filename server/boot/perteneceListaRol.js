@@ -2,11 +2,6 @@ module.exports = function(app) {
   var Role = app.models.Role;
 
   Role.registerResolver('Listamember', function(role, context, cb) {
-    // Q: Is the current request accessing a Project?
-    if (context.modelName !== 'Producto') {
-      // A: No. This role is only for projects: callback with FALSE
-      return process.nextTick(() => cb(null, false));
-    }
 
     //Q: Is the user logged in? (there will be an accessToken with an ID if so)
     var userId = context.accessToken.userId;
