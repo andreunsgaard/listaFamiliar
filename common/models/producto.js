@@ -45,4 +45,24 @@ module.exports = function(Producto) {
 
 	};
 
+	/**
+	 * limpiando un producto en concreto
+	 * @param {Function(Error, boolean)} callback
+	 */
+
+	Producto.prototype.limpiarproducto = function(callback) {
+		var producto;
+		// TODO
+
+		this.comprar = !this.comprar;
+
+		this.save(function(err, productocambiado) {
+
+			if (err) cb(err);
+
+			callback(null, productocambiado);
+
+		});
+	};
+
 };
