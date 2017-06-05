@@ -33,7 +33,14 @@ module.exports = function(Listafamiliar) {
 		next();
 	});
 
-	//asociar al ususario autenticado la lista recien creada
+	//hacer al creador de la lista familiar el propietario
+
+	Listafamiliar.beforeRemote("create", function(ctx, modelInstance, next) {
+		ctx.args.data.owner = ctx.req.accessToken.userId;
+		next();
+	});
+
+	//asociar al ususario autenticado la lista recien creada 
 
 	Listafamiliar.afterRemote("create", function(ctx, modelInstance, next) {
 		//...

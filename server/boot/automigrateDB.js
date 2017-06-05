@@ -26,10 +26,10 @@ module.exports = function(app) {
               password: 'password',
               listaFamiliarId:'1'
             },{
-              username: 'andreunsgaard',
-              apellidos: 'unsgaard',
-              nombre: 'andre',
-              email: 'aunsgaard@murciaeduca.es',
+              username: 'parmeno',
+              apellidos: 'fernandez',
+              nombre: 'angel',
+              email: 'angelparmeno@gmail.com',
               password: 'password'
             }], function(err, users) {
               if (err) throw err;

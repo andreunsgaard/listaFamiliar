@@ -28,6 +28,11 @@
       "type": "hasMany",
       "model": "Usuario",
       "foreignKey": ""
+    },
+    "usuario": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "owner"
     }
   },
   "acls": [
@@ -68,6 +73,13 @@
       "principalId": "$authenticated",
       "permission": "ALLOW",
       "property": "__link__solicitudes"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__destroyById__usuarios"
     }
   ],
   "methods": {}

@@ -24,70 +24,86 @@
       "foreignKey": ""
     }
   },
-  "acls": [{
-    "accessType": "*",
-    "principalType": "ROLE",
-    "principalId": "$everyone",
-    "permission": "DENY"
-  }, {
-    "accessType": "*",
-    "principalType": "ROLE",
-    "principalId": "admin",
-    "permission": "ALLOW"
-  }, {
-    "accessType": "WRITE",
-    "principalType": "ROLE",
-    "principalId": "Listamember",
-    "permission": "ALLOW"
-  }, {
-    "accessType": "EXECUTE",
-    "principalType": "ROLE",
-    "principalId": "Listamember",
-    "permission": "ALLOW",
-    "property": "limpiarLista"
-  }, {
-    "accessType": "EXECUTE",
-    "principalType": "ROLE",
-    "principalId": "permisocomprar",
-    "permission": "ALLOW",
-    "property": "limpiarproducto"
-  }],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "Listamember",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "Listamember",
+      "permission": "ALLOW",
+      "property": "limpiarLista"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "permisocomprar",
+      "permission": "ALLOW",
+      "property": "limpiarproducto"
+    }
+  ],
   "methods": {
     "limpiarLista": {
-      "accepts": [{
-        "arg": "ctx",
-        "type": "object",
-        "required": false,
-        "description": "El contexto de ejecución de la petición",
-        "http": {
-          "source": "context"
+      "accepts": [
+        {
+          "arg": "ctx",
+          "type": "object",
+          "required": false,
+          "description": "El contexto de ejecución de la petición",
+          "http": {
+            "source": "context"
+          }
         }
-      }],
-      "returns": [{
-        "arg": "productos",
-        "type": "number",
-        "root": true,
-        "description": "Los productos modificados"
-      }],
+      ],
+      "returns": [
+        {
+          "arg": "productos",
+          "type": "number",
+          "root": true,
+          "description": "Los productos modificados"
+        }
+      ],
       "description": "Modificar el atributo comprar de todos los productos de la lista del usuario para que aparezcan como comprados",
-      "http": [{
-        "path": "/limpiarLista",
-        "verb": "put"
-      }]
+      "http": [
+        {
+          "path": "/limpiarLista",
+          "verb": "put"
+        }
+      ]
     },
     "prototype.limpiarproducto": {
       "accepts": [],
-      "returns": [{
-        "arg": "producto",
-        "type": "boolean",
-        "root": true,
-        "description": ""
-      }],
+      "returns": [
+        {
+          "arg": "producto",
+          "type": "boolean",
+          "root": true,
+          "description": ""
+        }
+      ],
       "description": "limpiando un producto en concreto",
-      "http": [{
-        "path": "/limpiarproduct",
-        "verb": "put"
-      }]
+      "http": [
+        {
+          "path": "/limpiarproduct",
+          "verb": "put"
+        }
+      ]
     }
   }
 }
